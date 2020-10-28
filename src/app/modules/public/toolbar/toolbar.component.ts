@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { StorageService } from "../../../services/storage/storage.service";
+
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
@@ -7,12 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private storage: StorageService) { }
 
   ngOnInit(): void {
   }
 
   logout() {
-    localStorage.setItem('user', '');
+    this.storage.clear();
   }
 }

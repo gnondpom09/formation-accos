@@ -15,4 +15,12 @@ export class StorageService {
     const res = await localStorage.getItem(key);
     return JSON.parse(res);
   }
+
+  async removeItem(key: string) {
+    await localStorage.removeItem(key);
+  }
+
+  async clear() {
+    await localStorage.clear();
+  }
 }

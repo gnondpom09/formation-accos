@@ -36,7 +36,7 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {
     // Init fields
-    // TOTO: Set validator email allready exists
+    // TOTO: Set validator email allready exists and passwords match
     this.emailCtrl = this.fb.control('',  [Validators.required,  Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]);
     this.usernameCtrl = this.fb.control('', Validators.required);
     this.firstnameCtrl = this.fb.control(''),
@@ -57,9 +57,9 @@ export class SignupComponent implements OnInit {
     });
   }
 
-  register() {
+  async register() {
     // Get informations of user
-    const id = this.authService.generateUid(10);
+    const id = await this.authService.generateUid(10);
     this.newUser = {
       id: id,
       username: this.usernameCtrl.value,

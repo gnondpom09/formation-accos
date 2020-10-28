@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
 
+import { StorageService } from "../storage/storage.service";
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor() { }
+  constructor(private storage: StorageService) { }
 
     /**
    * Return state logged user
    */
   isAuthenticated(): boolean {
-    if (localStorage.getItem('uid')) {
+    if (this.storage.getObject('user')) {
       return true;
     } else {
       return false;

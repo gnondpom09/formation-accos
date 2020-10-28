@@ -13,7 +13,7 @@ export class AuthService {
    * Return state logged user
    */
   isAuthenticated(): boolean {
-    if (this.storage.getObject('user')) {
+    if (localStorage.getItem('user')) {
       return true;
     } else {
       return false;

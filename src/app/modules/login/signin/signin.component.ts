@@ -46,7 +46,8 @@ export class SigninComponent implements OnInit {
   login() {
     this.userService.getUserByEmail(this.emailCtrl.value).subscribe(user => {
       // TODO: Compare password with user find
-      this.storageService.setObject('user', user);
+      //this.storageService.setObject('user', user);
+      localStorage.setItem('user', JSON.stringify(user));
     })
   }
 

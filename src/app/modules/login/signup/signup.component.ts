@@ -73,7 +73,8 @@ export class SignupComponent implements OnInit {
     // Save new user in database
     this.userService.createNewUser(this.newUser).then(() => {
       // Save user in storage
-      this.storageService.setObject('user', this.newUser)
+      //this.storageService.setObject('user', this.newUser)
+      localStorage.setItem('user', JSON.stringify(this.newUser));
     })
   }
 

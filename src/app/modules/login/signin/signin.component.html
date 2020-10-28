@@ -1,0 +1,17 @@
+
+
+<form class="login-form" [formGroup]="loginForm" (ngSubmit)="login()">
+    <p class="form-group">
+        <mat-form-field floatLabel="email">
+            <input type="text" [formControl]="emailCtrl" matInput placeholder="Email">
+        </mat-form-field>
+    </p>
+    <p class="form-group">
+        <mat-form-field floatLabel="Password">
+            <input type="password" [formControl]="passwordCtrl" matInput placeholder="Password">
+        </mat-form-field>
+    </p>
+
+    <button type="submit" [disabled]="!loginForm.valid">Connexion</button>
+    
+</form>

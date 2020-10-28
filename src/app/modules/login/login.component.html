@@ -1,1 +1,9 @@
-<p>login works!</p>
+<div class="login">
+    <h1>Login</h1>
+
+    <router-outlet></router-outlet>
+
+    <p *ngIf="router.url === '/login/signin'" class="center">Pas encore inscrit? <a class="link" (click)="switchForm()">S'enregistrer</a></p>
+    <p *ngIf="router.url === '/login/signup'" class="*center"><a class="link" (click)="switchForm()">Se connecter</a></p>
+
+</div>

@@ -1,0 +1,5 @@
+<p>list-posts works!</p>
+
+<div *ngFor="let post of posts; index as i" (click)="viewPost(i)">
+    <app-post [post]="post"></app-post>
+</div>

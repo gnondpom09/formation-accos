@@ -1,7 +1,8 @@
-<p>toolbar works!</p>
-
 <button mat-button [matMenuTriggerFor]="menu">Menu</button>
 <mat-menu #menu="matMenu">
   <button routerLink="home" mat-menu-item>Home</button>
+  <button routerLink="posts" mat-menu-item>posts</button>
   <button routerLink="contact" mat-menu-item>Contact</button>
 </mat-menu>
+
+<button (click)="logout()">Logout</button>

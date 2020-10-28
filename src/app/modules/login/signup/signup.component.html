@@ -1,1 +1,39 @@
-<p>signup works!</p>
+
+
+<form class="register-form" [formGroup]="registerForm" (ngSubmit)="register()">
+    <p class="form-group">
+        <mat-form-field floatLabel="email">
+            <input type="text" [formControl]="emailCtrl" matInput placeholder="Email">
+        </mat-form-field>
+    </p>
+    <p class="form-group">
+        <mat-form-field floatLabel="username">
+            <input type="text" [formControl]="usernameCtrl" matInput placeholder="username">
+        </mat-form-field>
+    </p>
+    <p class="form-group">
+        <mat-form-field floatLabel="firstname">
+            <input type="text" [formControl]="firstnameCtrl" matInput placeholder="firstname">
+        </mat-form-field>
+    </p>
+    <p class="form-group">
+        <mat-form-field floatLabel="lastname">
+            <input type="text" [formControl]="lastnameCtrl" matInput placeholder="lastname">
+        </mat-form-field>
+    </p>
+    <p class="form-group">
+        <span class="form-control">
+            <mat-form-field floatLabel="Password">
+                <input type="password" [formControl]="passwordCtrl" matInput placeholder="Password">
+            </mat-form-field>
+        </span>
+        <span class="form-control">
+            <mat-form-field floatLabel="Repeat password">
+                <input type="password" [formControl]="repeatPasswordCtrl" matInput placeholder="Repeat password">
+            </mat-form-field>
+        </span>
+    </p>
+
+    <button type="submit" [disabled]="!registerForm.valid">S'enregistrer</button>
+    
+</form>
